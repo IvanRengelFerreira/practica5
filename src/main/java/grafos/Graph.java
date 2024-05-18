@@ -20,11 +20,13 @@ public class Graph<V>
       * @return true` si no estaba anteriormente y ` false` en caso contrario.*/
       public boolean addVertex(V v){
         if (adjacencyList.containsKey(v)) {
+
             return false;
+
         }
         adjacencyList.put(v,new HashSet<V>());
 
-        return true; 
+            return true; 
     }
     /**
     * Añade un arco entre los vértices ` v1` y ` v2` al grafo.
@@ -74,7 +76,7 @@ public class Graph<V>
      * ******************************************************************/
     @Override
     public String toString(){
-        return "Devolviendo lista de vertices adjacientes"+adjacencyList; //Este código hay que modificarlo.
+        return "Devolviendo lista de vertices adjacientes"+adjacencyList;
     }
 
     /*** 
@@ -99,21 +101,25 @@ public class Graph<V>
           
 
             if (verticeActual.equals(v2)) {
+
             Stack<V> pila = new Stack<>();
             List<V> camino = new ArrayList<>();
             
             pila.add(verticeActual);
             V verticePadre = padres.get(verticeActual);
+
             while (verticePadre != v1) {
                
                 pila.add(verticePadre);
                 verticePadre = padres.get(verticePadre);
             }
+
             pila.add(v1);
             while (!pila.isEmpty()) {
                 V hijo = pila.pop();
                 camino.add(hijo);
             }
+
             return camino;
                
             }
