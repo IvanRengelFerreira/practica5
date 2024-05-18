@@ -30,7 +30,7 @@ public class AppTest {
         expectedPath.add(5);
         expectedPath.add(4);//We check if the returned path is equal to the expected one.
         assertEquals(expectedPath, g.shortestPath(1, 4));
-    }Z
+    }
 
 }
 
